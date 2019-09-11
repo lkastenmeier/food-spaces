@@ -6,6 +6,7 @@ function FilterList() {
       <Filter />
       <Filter />
       <Filter />
+      <button className="Button">+</button>
     </div>
   );
 }
