@@ -1,5 +1,5 @@
 import React from "react";
 function Filter() {
-  return <div>Filter</div>;
+  return <button className="Filter">Filter</button>;
 }
 export default Filter;
