@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import RestaurantList from "./components/RestaurantList";
 import FilterList from "./components/FilterList";

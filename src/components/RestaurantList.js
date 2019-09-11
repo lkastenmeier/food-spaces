@@ -2,10 +2,14 @@ import React from "react";
 import Restaurant from "./Restaurant";
 function RestaurantList() {
   return (
-    <div>
-      RestaurantList
-      <Restaurant />{" "}
-    </div>
+    <ul className="RestaurantList">
+      <Restaurant />
+      <Restaurant />
+      <Restaurant />
+      <Restaurant />
+      <Restaurant />
+      <Restaurant />
+    </ul>
   );
 }
 export default RestaurantList;
