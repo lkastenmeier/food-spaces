@@ -12,13 +12,14 @@ body {
 .header {
   display: flex;
   justify-content: space-around;
+  text-align: center;
   padding: 20px;
   height: 70px;
   width: 100vw;
   background-color: #bbc7a4;
   color: #f2f5ea;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 40px;
 }
 .Button {
   color: #f2f5ea;
@@ -67,14 +68,57 @@ body {
   margin: 10px;
   padding: 10px;
 }
-.RestaurantImage {
-  width: 30%;
-
-  margin: 10px;
-}
 .RestaurantInfo {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: 10px;
+}
+.RestaurantImage {
+  width: 100px;
+  margin: 10px;
+  align-items: center;
+}
+@media screen and (max-width: 879px) {
+  .RestaurantImageExtra {
+    display: none;
+  }
+}
+@media screen and (max-width: 300px) {
+  .header {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 880px) {
+  .Restaurant {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .RestaurantImage {
+    align-content: center;
+    height: 100px;
+    width: 100px;
+    margin: 0px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .ImgContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  .RestaurantImageExtra {
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .RestaurantInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+  }
 }
