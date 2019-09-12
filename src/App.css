@@ -22,16 +22,14 @@ body {
   font-size: 40px;
 }
 .Button {
-  background-color: #e75a7c;
-  color: #d6dbd2;
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  margin-top: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  background-color: #bbc7a4;
+  width: 200px;
+  min-width: 100px;
+  height: 30px;
+  min-height: 30px;
+  color: #e75a7c;
+  margin: 10px;
   border: 2px solid #f2f5ea;
-  border-radius: 50%;
 }
 
 .FilterList {
