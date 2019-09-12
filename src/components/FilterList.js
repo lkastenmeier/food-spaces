@@ -6,7 +6,7 @@ function FilterList() {
       <Filter />
       <Filter />
       <Filter />
-      <button className="Button">+</button>
+      <button className="Button">New Space</button>
     </div>
   );
 }
