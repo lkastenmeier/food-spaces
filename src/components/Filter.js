@@ -1,12 +1,13 @@
 import React from "react";
-function Filter() {
+
+function Filter(props) {
   return (
     <select className="Filter">
-      Filter
-      <option value="Option">Option1</option>
-      <option value="Option">Option2</option>
-      <option value="Option">Option3</option>
+      {props.filter.options.map(element => {
+        return <option key={element}>{element}</option>;
+      })}
     </select>
   );
 }
+
 export default Filter;
