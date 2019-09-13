@@ -75,11 +75,29 @@ body {
   width: 70%;
   margin: 10px;
 }
+.RestaurantName {
+  margin: 3px;
+}
+.RestaurantDescription {
+  margin: 2px;
+}
 .RestaurantImage {
   width: 100px;
   margin: 0px;
   align-items: center;
   border: 2px solid #f2f5ea;
+}
+.RestaurantCategories {
+  display: flex;
+
+  color: #d6dbd2;
+  font-weight: bold;
+  margin: 3px;
+  font-size: 14px;
+}
+.RestaurantCategory {
+  margin: 3px;
+  margin-left: 10px;
 }
 @media screen and (max-width: 879px) {
   .RestaurantImageExtra {
