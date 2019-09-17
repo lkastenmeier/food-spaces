@@ -1,23 +1,15 @@
 export const filters = [
   {
     title: "Price",
-    options: ["Price", "$", "$$", "$$$", "$$$$", "$$$$$"]
+    options: ["$", "$$", "$$$", "$$$$", "$$$$$"]
   },
   {
     title: "Distance",
-    options: [
-      "Distance",
-      "< 2mins",
-      "< 5mins",
-      "< 10mins",
-      "< 15mins",
-      "< 20mins"
-    ]
+    options: ["< 2mins", "< 5mins", "< 10mins", "< 15mins", "< 20mins"]
   },
   {
     title: "Type",
     options: [
-      "Type",
       "wraps",
       "panini",
       "salad",

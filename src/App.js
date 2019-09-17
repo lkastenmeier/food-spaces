@@ -6,11 +6,14 @@ import FilterList from "./components/FilterList";
 import Header from "./components/Header";
 
 function App() {
+  function handleFilterChange(title, option) {
+    console.log(`${title}, ${option}`);
+  }
   return (
     <div className="App">
       <Header />
       <main>
-        <FilterList />
+        <FilterList onFilterChange={handleFilterChange} />
         <RestaurantList />
       </main>
     </div>

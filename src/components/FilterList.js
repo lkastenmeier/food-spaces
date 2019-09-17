@@ -1,11 +1,18 @@
 import React from "react";
 import Filter from "./Filter";
 import { filters } from "../api/FilterData";
-function FilterList() {
+// import { tsPropertySignature } from "@babel/types";
+function FilterList(props) {
   return (
     <section className="FilterList">
       {filters.map(filter => {
-        return <Filter key={filter.title} filter={filter} />;
+        return (
+          <Filter
+            key={filter.title}
+            filter={filter}
+            onChange={props.onFilterChange}
+          />
+        );
       })}
     </section>
   );
