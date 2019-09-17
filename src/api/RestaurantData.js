@@ -7,6 +7,7 @@ export const restaurants = [
     categories: ["japanese", "sushi"],
     distance: 1,
     rating: 3.7,
+    price: 3,
     description: "Long waiting time"
   },
   {
@@ -18,6 +19,7 @@ export const restaurants = [
     categories: ["wraps", "bowls", "burritos"],
     distance: 4,
     rating: 4.8,
+    price: 2,
     description: "Daily Deal"
   },
   {
@@ -29,6 +31,7 @@ export const restaurants = [
     categories: ["wraps", "panini", "salad"],
     distance: 1,
     rating: 4.1,
+    price: 1,
     description: "Eat Fresh"
   }
 ];

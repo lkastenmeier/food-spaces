@@ -1,4 +1,5 @@
 import React from "react";
+import { filters } from "../api/FilterData";
 
 function Filter(props) {
   return (
@@ -11,7 +12,7 @@ function Filter(props) {
       >
         <option>{props.filter.title}</option>
         {props.filter.options.map(option => {
-          return <option key={option}>{option}</option>;
+          return <option>{option}</option>;
         })}
       </select>
     </>

@@ -20,21 +20,17 @@ function Restaurant(props) {
 
         <div className="RestaurantCategories">
           {props.restaurant.categories.map(element => {
-            return (
-              <p className="RestaurantCategory" key={props.restaurant.title}>
-                {element}
-              </p>
-            );
+            return <p className="RestaurantCategory">{element}</p>;
           })}
         </div>
         <div className="RestaurantInfo">
-          <p className="RestaurantDescription" key={props.restaurant.title}>
+          <p className="RestaurantDescription">
             {props.restaurant.description}
           </p>
-          <p className="RestaurantDescription" key={props.restaurant.title}>
+          <p className="RestaurantDescription">
             Distance: {props.restaurant.distance} minute(s)
           </p>
-          <p className="RestaurantDescription" key={props.restaurant.title}>
+          <p className="RestaurantDescription">
             Rating:
             {props.restaurant.rating} stars
           </p>
