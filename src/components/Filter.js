@@ -1,18 +1,20 @@
 import React from "react";
-import { filters } from "../api/FilterData";
+// import { filters } from "../api/FilterData";
 
-function Filter(props) {
+function Filter({ filter, onChange }) {
   return (
     <>
       <select
         className="Filter"
         onChange={event => {
-          props.onChange(props.filter.title, event.target.value);
+          onChange(filter.title, event.target.value);
         }}
       >
-        <option>{props.filter.title}</option>
-        {props.filter.options.map(option => {
-          return <option>{option}</option>;
+        <option value="">{filter.title}</option>
+        <option value="">no {filter.title} filter</option>
+
+        {filter.options.map(option => {
+          return <option value={option}>{option}</option>;
         })}
       </select>
     </>

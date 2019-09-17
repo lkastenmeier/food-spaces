@@ -95,6 +95,10 @@ body {
   margin: 3px;
   font-size: 14px;
 }
+h5 {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
 .RestaurantCategory {
   margin: 3px;
   margin-left: 10px;

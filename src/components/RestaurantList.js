@@ -2,48 +2,33 @@ import React from "react";
 import Restaurant from "./Restaurant";
 import { restaurants } from "../api/RestaurantData";
 function RestaurantList(props) {
+  console.log(props.selectedFilters);
+
   const filteredRestaurants = restaurants.filter(restaurant => {
-    if (!props.selectedFilter) {
-      return true;
+    let restaurantSelection = true;
+    if (props.selectedFilters.Distance) {
+      //below: extracts the number from the string
+      let numbers = props.selectedFilters.Distance.match(/\d+/g).map(Number);
+      restaurantSelection = restaurant.distance <= numbers;
     }
-    if (props.selectedFilter.title === "Distance") {
-      let numbers = props.selectedFilter.value.match(/\d+/g).map(Number);
-      return restaurant.distance <= numbers;
-      // switch (props.selectedFilter.value) {
-      //   case "< 2mins":
-      //     return restaurant.distance < 2;
-      //   case "< 5mins":
-      //     return restaurant.distance < 5;
-      //   case "< 10mins":
-      //     return restaurant.distance < 10;
-      //   case "< 15mins":
-      //     return restaurant.distance < 15;
-      //   case "< 20mins":
-      //     return restaurant.distance < 20;
-      //   default:
-      //     break;
-      // }
-    }
-    if (props.selectedFilter.title === "Price") {
-      // switch (props.selectedFilter.value) {
-      // case props.selectedFilter.value:
-      return restaurant.price <= props.selectedFilter.value.length;
-      // case "$$":
-      //   return restaurant.price < 2;
-      // case "$$$":
-      //   return restaurant.price < 3;
-      // case "$$$$":
-      //   return restaurant.price < 4;
-      // case "$$$$$":
-      //   return restaurant.price < 5;
-      // default:
-      //   break;
+    if (restaurantSelection && props.selectedFilters.Price) {
+      //below: compares string length(!)
+      restaurantSelection =
+        restaurant.price <= props.selectedFilters.Price.length;
     }
 
-    if (props.selectedFilter.title === "Type") {
-      return restaurant.categories.includes(props.selectedFilter.value);
+    if (restaurantSelection && props.selectedFilters.Type) {
+      restaurantSelection = restaurant.categories.includes(
+        props.selectedFilters.Type
+      );
     }
-    return true;
+    return restaurantSelection;
+
+    // could also be written with destructuring:
+    // function RestaurantList({selectedFilters}) {
+    // console.log(selectedFilters);
+    //   const filteredRestaurants = restaurants.filter(restaurant => {
+    //     return restaurant.distance > 3;
   });
   return (
     <section className="RestaurantList">
@@ -56,19 +41,3 @@ function RestaurantList(props) {
   );
 }
 export default RestaurantList;
-
-// could also be written with destructuring:
-//
-// function RestaurantList({selectedFilter}) {
-// console.log(selectedFilter);
-//   const filteredRestaurants = restaurants.filter(restaurant => {
-//     return restaurant.distance > 3;
-//   });
-//   return (
-//     <section className="RestaurantList">
-//       {filteredRestaurants.map(restaurant => {
-//         return <Restaurant key={restaurant.description} restaurant={restaurant} />;
-//       })}
-//     </section>
-//   );
-// }

@@ -25,14 +25,13 @@ function Restaurant(props) {
         </div>
         <div className="RestaurantInfo">
           <p className="RestaurantDescription">
-            {props.restaurant.description}
+            <h5>"{props.restaurant.description}"</h5>
           </p>
           <p className="RestaurantDescription">
             Distance: {props.restaurant.distance} minute(s)
           </p>
           <p className="RestaurantDescription">
-            Rating:
-            {props.restaurant.rating} stars
+            Rating: {props.restaurant.rating} stars
           </p>
         </div>
       </div>

@@ -19,7 +19,8 @@ export const filters = [
       "sandwiches",
       "sweets",
       "chinese",
-      "indian"
+      "indian",
+      "sushi"
     ]
   }
 ];
