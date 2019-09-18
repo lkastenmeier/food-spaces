@@ -75,10 +75,33 @@ body {
   width: 70%;
   margin: 10px;
 }
+.RestaurantName {
+  margin: 3px;
+}
+.RestaurantDescription {
+  margin: 2px;
+}
 .RestaurantImage {
   width: 100px;
-  margin: 10px;
+  margin: 0px;
   align-items: center;
+  border: 2px solid #f2f5ea;
+}
+.RestaurantCategories {
+  display: flex;
+
+  color: #d6dbd2;
+  font-weight: bold;
+  margin: 3px;
+  font-size: 14px;
+}
+h5 {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+.RestaurantCategory {
+  margin: 3px;
+  margin-left: 10px;
 }
 @media screen and (max-width: 879px) {
   .RestaurantImageExtra {
@@ -101,7 +124,7 @@ body {
     align-content: center;
     height: 100px;
     width: 100px;
-    margin: 0px;
+    margin: 5px;
 
     margin-top: 10px;
     margin-bottom: 10px;
@@ -115,6 +138,7 @@ body {
     height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 2px solid #f2f5ea;
   }
   .RestaurantInfo {
     display: flex;

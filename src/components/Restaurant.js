@@ -1,24 +1,41 @@
 import React from "react";
-function Restaurant() {
+function Restaurant(props) {
   return (
-    <li className="Restaurant">
+    <article className="Restaurant">
       <div className="ImgContainer">
         <img
           className="RestaurantImage"
           alt=""
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnqE7HLHGWp8ip9cV6zUhwc1nGQXMiBI_mt7M9aBcv_0wCxo-X"
+          src={props.restaurant.imgSrc}
         ></img>
+
         <img
           className="RestaurantImageExtra"
+          src={props.restaurant.altimgSrc}
           alt=""
-          src="https://cdn-img.scalabs.com.au/4ScpHerKANCBjR1XtpP5nyHOwpaNsu1WIm4FLDw5ovQ/aHR0cHM6Ly9zdy1o/aXQtcHJkLnNjYWRp/Z2l0YWwuaW8vbWVk/aWEvMzg3ODAvY2Fy/dG9vbi1mb29kLnBu/Zz9wcmVzZXQ9TWFp/bkltYWdl"
         ></img>
       </div>
       <div className="RestaurantInfo">
-        <h2 className="RestaurantName">Restaurant</h2>
-        <p className="RestaurantDescription">Lecker Lecker Lecker</p>
+        <h2 className="RestaurantName">{props.restaurant.title}</h2>
+
+        <div className="RestaurantCategories">
+          {props.restaurant.categories.map(element => {
+            return <p className="RestaurantCategory">{element}</p>;
+          })}
+        </div>
+        <div className="RestaurantInfo">
+          <p className="RestaurantDescription">
+            <h5>"{props.restaurant.description}"</h5>
+          </p>
+          <p className="RestaurantDescription">
+            Distance: {props.restaurant.distance} minute(s)
+          </p>
+          <p className="RestaurantDescription">
+            Rating: {props.restaurant.rating} stars
+          </p>
+        </div>
       </div>
-    </li>
+    </article>
   );
 }
 export default Restaurant;
