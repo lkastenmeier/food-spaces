@@ -13,13 +13,12 @@ import Header from "./components/Header";
 // above: also possible as an array
 
 function App() {
-  const [filters, setFilters] = React.useState({});
+  const [filters, setFilters] = React.useState({
+    Distance: "< 10mins",
+    Price: "$$$",
+    Type: "wraps"
+  });
   function handleFilterChange(title, option) {
-    // console.log(`${title}, ${option}`);
-    // const newFilter = {
-    //   title: title,
-    //   value: option
-    // };
     const newFilters = { ...filters };
     newFilters[title] = option;
     setFilters(newFilters);
@@ -29,7 +28,10 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <FilterList onFilterChange={handleFilterChange} />
+        <FilterList
+          selectedFilters={filters}
+          onFilterChange={handleFilterChange}
+        />
         <RestaurantList selectedFilters={filters} />
       </main>
     </div>

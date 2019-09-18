@@ -1,7 +1,7 @@
 import React from "react";
 // import { filters } from "../api/FilterData";
 
-function Filter({ filter, onChange }) {
+function Filter({ filter, onChange, selectedValue }) {
   return (
     <>
       <select
@@ -9,12 +9,17 @@ function Filter({ filter, onChange }) {
         onChange={event => {
           onChange(filter.title, event.target.value);
         }}
+        value={selectedValue}
       >
-        <option value="">{filter.title}</option>
-        <option value="">no {filter.title} filter</option>
+        <option value="0">{filter.title}</option>
 
         {filter.options.map(option => {
-          return <option value={option}>{option}</option>;
+          // const selected = option === { selectedValue };
+          return (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          );
         })}
       </select>
     </>

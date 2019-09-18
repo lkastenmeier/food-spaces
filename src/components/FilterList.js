@@ -2,7 +2,7 @@ import React from "react";
 import Filter from "./Filter";
 import { filters } from "../api/FilterData";
 // import { tsPropertySignature } from "@babel/types";
-function FilterList({ onFilterChange }) {
+function FilterList({ onFilterChange, selectedFilters }) {
   return (
     <section className="FilterList">
       {filters.map(filter => {
@@ -11,6 +11,7 @@ function FilterList({ onFilterChange }) {
             key={filter.title}
             filter={filter}
             onChange={onFilterChange}
+            selectedValue={selectedFilters[filter.title]}
           />
         );
       })}

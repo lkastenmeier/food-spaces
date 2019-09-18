@@ -1,25 +1,25 @@
 import React from "react";
 import Restaurant from "./Restaurant";
 import { restaurants } from "../api/RestaurantData";
-function RestaurantList(props) {
-  console.log(props.selectedFilters);
+function RestaurantList({ selectedFilters }) {
+  console.log(selectedFilters);
 
   const filteredRestaurants = restaurants.filter(restaurant => {
     let restaurantSelection = true;
-    if (props.selectedFilters.Distance) {
+    if (selectedFilters.Distance) {
       //below: extracts the number from the string
-      let numbers = props.selectedFilters.Distance.match(/\d+/g).map(Number);
+      let numbers = selectedFilters.Distance.match(/\d+/g).map(Number);
+      console.log(numbers);
       restaurantSelection = restaurant.distance <= numbers;
     }
-    if (restaurantSelection && props.selectedFilters.Price) {
+    if (restaurantSelection && selectedFilters.Price) {
       //below: compares string length(!)
-      restaurantSelection =
-        restaurant.price <= props.selectedFilters.Price.length;
+      restaurantSelection = restaurant.price <= selectedFilters.Price.length;
     }
 
-    if (restaurantSelection && props.selectedFilters.Type) {
+    if (restaurantSelection && selectedFilters.Type) {
       restaurantSelection = restaurant.categories.includes(
-        props.selectedFilters.Type
+        selectedFilters.Type
       );
     }
     return restaurantSelection;
